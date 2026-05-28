@@ -15,7 +15,74 @@ name="viewport"
 content="width=device-width, initial-scale=1.0"
 />
 
-<title>Book Appointment | Anamay Dental Wellness</title>
+<!-- =====================================================
+SEO META TAGS
+===================================================== -->
+
+<title>
+Book Dental Appointment in Amravati | Anamay Dental Wellness
+</title>
+
+<meta
+name="description"
+content="Book your dental appointment online at Anamay Dental Wellness in Amravati for root canal treatment, smile design, braces, implants and painless dental care."
+>
+
+<meta
+name="keywords"
+content="Book Dentist Appointment Amravati, Dental Clinic Appointment, Root Canal Appointment, Smile Design Consultation, Best Dentist Amravati"
+>
+
+<meta
+name="author"
+content="Anamay Dental Wellness"
+>
+
+<meta
+name="robots"
+content="index, follow"
+>
+
+<!-- OPEN GRAPH -->
+
+<meta
+property="og:title"
+content="Book Appointment | Anamay Dental Wellness"
+>
+
+<meta
+property="og:description"
+content="Schedule your dental appointment online with Anamay Dental Wellness in Amravati."
+>
+
+<meta
+property="og:type"
+content="website"
+>
+
+<meta
+property="og:image"
+content="images/appointment.webp"
+>
+
+<meta
+property="og:url"
+content="https://anamaydental.in/appointment.html"
+>
+
+<!-- TWITTER -->
+
+<meta
+name="twitter:card"
+content="summary_large_image"
+>
+
+<!-- CANONICAL -->
+
+<link
+rel="canonical"
+href="https://anamaydental.in/appointment.html"
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -25,9 +92,9 @@ rel="stylesheet"
 />
 
 <link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-/>
+rel="icon"
+href="images/favicon.png"
+>
 
 <style>
 
@@ -143,6 +210,13 @@ font-size:14px;
 font-size:14px;
 font-weight:700;
 line-height:1.2;
+}
+
+img{
+width:100%;
+display:block;
+height:auto;
+object-fit:cover;
 }
 
 .logo h3 span{
@@ -520,7 +594,31 @@ padding:17px;
 }
 
 </style>
+<!-- =====================================================
+LOCAL BUSINESS SEO
+===================================================== -->
 
+<script type="application/ld+json">
+
+{
+"@context":"https://schema.org",
+"@type":"Dentist",
+"name":"Anamay Dental Wellness",
+"url":"https://anamaydental.in",
+"telephone":"+91 93563 69815",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"1st Floor, Jadhav Celebrations, Shegaon Naka, Rahatgaon Road",
+"addressLocality":"Amravati",
+"addressRegion":"Maharashtra",
+"postalCode":"444603",
+"addressCountry":"IN"
+},
+"openingHours":"Mo-Sa 10:00-20:30",
+"priceRange":"₹₹"
+}
+
+</script>
 </head>
 
 <body>
@@ -604,14 +702,17 @@ APPOINTMENT
 <small>BOOK A VISIT</small>
 
 <h1>
-Schedule your
-appointment in
-<span>under a minute.</span>
+
+Book your
+<span>dental appointment</span>
+in Amravati
+
 </h1>
 
 <p>
-Pick a date and time that works for you.
-We'll confirm your slot instantly over WhatsApp.
+
+Book your appointment online with Anamay Dental Wellness for root canal treatment, smile design, braces, implants and painless dental care in Amravati.
+
 </p>
 
 <div class="points">
@@ -657,14 +758,16 @@ Quick book on WhatsApp
 
 <input
 type="text"
-placeholder="Full Name"
+placeholder="Patient Full Name"
 id="name"
+aria-label="Patient Full Name"
 />
 
 <input
-type="text"
+type="tel"
 placeholder="Phone Number"
 id="phone"
+aria-label="Phone Number"
 />
 
 </div>
@@ -714,8 +817,8 @@ placeholder="Additional notes (allergies, anxiety, previous treatments)"
 <button
 class="submit-btn"
 onclick="sendToWhatsApp()"
+aria-label="Book Dental Appointment"
 >
-
 Confirm Appointment via WhatsApp
 
 </button>
