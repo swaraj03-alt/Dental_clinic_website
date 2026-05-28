@@ -1,0 +1,1122 @@
+<!-- =========================================================
+REVIEWS.HTML - PREMIUM ANAMAY STYLE CLONE
+FULL RESPONSIVE + MOBILE MENU + AUTO SCROLL REVIEWS
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Reviews | Anamay Dental Wellness</title>
+
+  <meta
+    name="description"
+    content="Patient stories and reviews from Anamay Dental Wellness."
+  >
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f5fbfc;
+      overflow-x:hidden;
+      color:#0f172a;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1180px;
+      margin:auto;
+      position:relative;
+      z-index:2;
+    }
+
+    section{
+      padding:120px 0;
+      position:relative;
+    }
+
+    /* ====================================================
+       BACKGROUND BLUR
+    ==================================================== */
+
+    .blur1,
+    .blur2{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(140px);
+      z-index:0;
+    }
+
+    .blur1{
+      width:500px;
+      height:500px;
+      background:#d6f7ff;
+      left:-200px;
+      top:0;
+      opacity:.7;
+      animation:moveBlur 8s linear infinite alternate;
+    }
+
+    .blur2{
+      width:500px;
+      height:500px;
+      background:#dff8ff;
+      right:-200px;
+      bottom:0;
+      opacity:.7;
+    }
+
+    @keyframes moveBlur{
+
+      from{
+        transform:translateX(0px);
+      }
+
+      to{
+        transform:translateX(80px);
+      }
+
+    }
+
+    /* ====================================================
+       HEADER
+    ==================================================== */
+
+    header{
+      position:fixed;
+      top:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:100%;
+      z-index:9999;
+      padding:0 15px;
+    }
+
+    .navbar{
+      width:100%;
+      max-width:1180px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 20px;
+      border-radius:30px;
+      background:rgba(255,255,255,.75);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 10px 30px rgba(0,0,0,.04);
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo-box{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+    }
+
+    .logo h3{
+      font-size:14px;
+      line-height:1.2;
+      font-weight:700;
+    }
+
+    .logo h3 span{
+      display:block;
+      color:#64748b;
+      font-size:11px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+    }
+
+    .nav-links a{
+      font-size:13px;
+      color:#475569;
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      color:#0ea5e9;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .nav-btn{
+      border:none;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      color:white;
+      padding:14px 24px;
+      border-radius:40px;
+      cursor:pointer;
+      font-size:13px;
+      font-weight:600;
+      box-shadow:0 10px 25px rgba(37,99,235,.2);
+    }
+
+    /* ====================================================
+       MOBILE MENU
+    ==================================================== */
+
+    .menu-toggle{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      background:white;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:18px;
+      color:#0f172a;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .mobile-menu{
+      position:fixed;
+      top:92px;
+      left:50%;
+      transform:translateX(-50%) translateY(-30px);
+      width:92%;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(24px);
+      border-radius:30px;
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      z-index:999;
+      opacity:0;
+      pointer-events:none;
+      transition:.4s;
+      box-shadow:0 30px 60px rgba(0,0,0,.08);
+    }
+
+    .mobile-menu.active{
+      opacity:1;
+      transform:translateX(-50%) translateY(0);
+      pointer-events:auto;
+    }
+
+    .mobile-menu a{
+      font-size:15px;
+      color:#0f172a;
+      font-weight:500;
+    }
+
+    .mobile-btn{
+      width:100%;
+      border:none;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      color:white;
+      padding:15px;
+      border-radius:18px;
+      font-weight:600;
+      cursor:pointer;
+      font-family:'Poppins',sans-serif;
+    }
+
+    /* ====================================================
+       HERO
+    ==================================================== */
+
+    .reviews-hero{
+      padding-top:180px;
+      overflow:hidden;
+    }
+
+    .reviews-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:50px;
+      margin-bottom:80px;
+    }
+
+    .reviews-title small{
+      color:#0ea5e9;
+      letter-spacing:2px;
+      font-size:11px;
+      font-weight:600;
+    }
+
+    .reviews-title h1{
+      margin-top:14px;
+      font-size:78px;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:-3px;
+    }
+
+    .reviews-title h1 span{
+      color:#0ea5e9;
+    }
+
+    .reviews-title p{
+      margin-top:24px;
+      color:#64748b;
+      font-size:15px;
+      line-height:1.9;
+      max-width:550px;
+    }
+
+    /* ====================================================
+       GOOGLE BOX
+    ==================================================== */
+
+    .google-box{
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(20px);
+      border-radius:28px;
+      padding:35px;
+      display:flex;
+      align-items:center;
+      gap:25px;
+      min-width:360px;
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 15px 35px rgba(0,0,0,.03);
+    }
+
+    .google-rating{
+      font-size:62px;
+      font-weight:800;
+      color:#0f172a;
+    }
+
+    .google-box h4{
+      font-size:16px;
+      margin-bottom:8px;
+    }
+
+    .google-box p{
+      color:#64748b;
+      font-size:12px;
+      margin-bottom:10px;
+    }
+
+    .google-box a{
+      color:#0ea5e9;
+      font-size:12px;
+      font-weight:600;
+    }
+
+    .stars{
+      color:#facc15;
+      margin-top:8px;
+      font-size:14px;
+    }
+
+    /* ====================================================
+       REVIEW SCROLL
+    ==================================================== */
+
+    .reviews-marquee{
+      overflow:hidden;
+      width:100%;
+      margin-top:20px;
+    }
+
+    .reviews-track{
+      display:flex;
+      gap:24px;
+      width:max-content;
+      animation:scrollReviews 40s linear infinite;
+    }
+
+    .reviews-track:hover{
+      animation-play-state:paused;
+    }
+
+    @keyframes scrollReviews{
+
+      0%{
+        transform:translateX(0);
+      }
+
+      100%{
+        transform:translateX(-50%);
+      }
+
+    }
+
+    /* ====================================================
+       REVIEW CARD
+    ==================================================== */
+
+    .review-card{
+      width:320px;
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(20px);
+      border-radius:28px;
+      padding:26px;
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 10px 30px rgba(0,0,0,.03);
+      transition:.4s;
+      flex-shrink:0;
+    }
+
+    .review-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .review-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+
+    .review-user{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .review-avatar{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:#0ea5e9;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .review-user h4{
+      font-size:13px;
+      margin-bottom:3px;
+    }
+
+    .review-user small{
+      font-size:11px;
+      color:#94a3b8;
+    }
+
+    .quote{
+      color:#67e8f9;
+      font-size:22px;
+    }
+
+    .review-card p{
+      color:#64748b;
+      line-height:1.9;
+      font-size:13px;
+      margin-top:14px;
+    }
+
+    /* ====================================================
+       CTA
+    ==================================================== */
+
+    .cta{
+      margin-top:120px;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      border-radius:40px;
+      padding:80px;
+      text-align:center;
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta h2{
+      font-size:56px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto;
+      margin-bottom:35px;
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    .cta button{
+      border:none;
+      background:white;
+      color:#0ea5e9;
+      padding:16px 30px;
+      border-radius:40px;
+      font-weight:600;
+      cursor:pointer;
+      font-family:'Poppins',sans-serif;
+    }
+
+    /* ====================================================
+       FOOTER
+    ==================================================== */
+
+    footer{
+      margin-top:120px;
+      background:#020817;
+      padding:120px 0 50px;
+      position:relative;
+      overflow:hidden;
+      color:white;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:40px;
+      position:relative;
+      z-index:2;
+    }
+
+    .footer-grid h4{
+      margin-bottom:20px;
+      font-size:14px;
+    }
+
+    .footer-grid p,
+    .footer-grid a{
+      color:#94a3b8;
+      font-size:13px;
+      line-height:2;
+    }
+
+    .footer-big{
+      position:absolute;
+      bottom:-50px;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:240px;
+      font-weight:800;
+      color:rgba(255,255,255,.04);
+      letter-spacing:-10px;
+    }
+
+    /* ====================================================
+       WHATSAPP
+    ==================================================== */
+
+    .whatsapp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:26px;
+      z-index:99999;
+      box-shadow:
+      0 15px 35px rgba(34,197,94,.35),
+      0 0 30px rgba(34,197,94,.2);
+    }
+
+    /* ====================================================
+       RESPONSIVE
+    ==================================================== */
+
+    @media(max-width:768px){
+
+      html,
+      body{
+        overflow-x:hidden;
+      }
+
+      .container{
+        width:92%;
+      }
+
+      section{
+        padding:80px 0;
+      }
+
+      header{
+        top:14px;
+      }
+
+      .navbar{
+        padding:14px 16px;
+        border-radius:24px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .nav-btn{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:flex;
+      }
+
+      .reviews-hero{
+        padding-top:130px;
+      }
+
+      .reviews-top{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:45px;
+      }
+
+      .reviews-title h1{
+        font-size:50px;
+        line-height:1.08;
+      }
+
+      .reviews-title p{
+        font-size:14px;
+      }
+
+      .google-box{
+        width:100%;
+        min-width:100%;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .review-card{
+        width:260px;
+      }
+
+      .cta{
+        padding:50px 26px;
+      }
+
+      .cta h2{
+        font-size:38px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-big{
+        font-size:90px;
+      }
+
+      .whatsapp{
+        width:58px;
+        height:58px;
+        font-size:24px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- ====================================================
+     HEADER
+==================================================== -->
+
+<header>
+
+  <div class="navbar">
+
+    <div class="logo">
+
+      <div class="logo-box">
+        <i class="fa-solid fa-tooth"></i>
+      </div>
+
+      <h3>
+        Anamay
+        <span>Dental Wellness</span>
+      </h3>
+
+    </div>
+
+    <div class="nav-links">
+
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="doctor.html">Doctor</a>
+      <a href="review.html">Reviews</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div class="nav-right">
+
+      <a href="appointment.html">
+
+        <button class="nav-btn">
+          Book Appointment
+        </button>
+
+      </a>
+
+      <div class="menu-toggle" id="menu-toggle">
+
+        <i class="fa-solid fa-bars"></i>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobile-menu">
+
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="doctor.html">Doctor</a>
+  <a href="review.html">Reviews</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+
+  <a
+    href="https://wa.me/919356369815"
+    target="_blank"
+  >
+
+    <button class="mobile-btn">
+
+      WhatsApp Consultation
+
+    </button>
+
+  </a>
+
+</div>
+
+<!-- ====================================================
+     HERO
+==================================================== -->
+
+<section class="reviews-hero">
+
+  <div class="blur1"></div>
+  <div class="blur2"></div>
+
+  <div class="container">
+
+    <div class="reviews-top">
+
+      <div class="reviews-title">
+
+        <small>PATIENT STORIES</small>
+
+        <h1>
+          Loved by
+          <span>Amravati's</span>
+          smiles.
+        </h1>
+
+        <p>
+          Real stories from patients who trusted
+          Anamay Dental Wellness for confident,
+          healthy and beautiful smiles.
+        </p>
+
+      </div>
+
+      <div class="google-box">
+
+        <div>
+
+          <div class="google-rating">
+            4.9
+          </div>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+        </div>
+
+        <div>
+
+          <h4>Excellent on Google</h4>
+
+          <p>
+            Based on 69 verified reviews
+          </p>
+
+          <a href="#">
+            Read all on Google →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- REVIEWS -->
+
+    <div class="reviews-marquee">
+
+      <div class="reviews-track">
+
+        <!-- CARD -->
+
+        <div class="review-card">
+
+          <div class="review-head">
+
+            <div class="review-user">
+
+              <div class="review-avatar">P</div>
+
+              <div>
+                <h4>Priya Deshmukh</h4>
+                <small>5 months ago</small>
+              </div>
+
+            </div>
+
+            <div class="quote">❞</div>
+
+          </div>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Got my smile design done here —
+            beyond what I imagined.
+            Highly meticulous and great quality work.”
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="review-card">
+
+          <div class="review-head">
+
+            <div class="review-user">
+
+              <div class="review-avatar">S</div>
+
+              <div>
+                <h4>Sanket Kale</h4>
+                <small>7 months ago</small>
+              </div>
+
+            </div>
+
+            <div class="quote">❞</div>
+
+          </div>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “The clinic feels premium and
+            the doctor is genuinely caring.”
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="review-card">
+
+          <div class="review-head">
+
+            <div class="review-user">
+
+              <div class="review-avatar">A</div>
+
+              <div>
+                <h4>Anjali Patil</h4>
+                <small>1 year ago</small>
+              </div>
+
+            </div>
+
+            <div class="quote">❞</div>
+
+          </div>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Painless RCT and warm staff.
+            Anamay sets a new standard for dental care.”
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="review-card">
+
+          <div class="review-head">
+
+            <div class="review-user">
+
+              <div class="review-avatar">R</div>
+
+              <div>
+                <h4>Rajesh Charjan</h4>
+                <small>5 months ago</small>
+              </div>
+
+            </div>
+
+            <div class="quote">❞</div>
+
+          </div>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Doctors speak really well with patients
+            and make us comfortable.”
+          </p>
+
+        </div>
+
+        <!-- DUPLICATE -->
+
+        <div class="review-card">
+
+          <div class="review-head">
+
+            <div class="review-user">
+
+              <div class="review-avatar">M</div>
+
+              <div>
+                <h4>Minakshi Bajaj</h4>
+                <small>2 months ago</small>
+              </div>
+
+            </div>
+
+            <div class="quote">❞</div>
+
+          </div>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Very calm, patient and explains
+            every treatment clearly.”
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+
+    <div class="cta">
+
+      <h2>
+        Your smile story starts here.
+      </h2>
+
+      <p>
+        Join hundreds of happy patients who trusted
+        Anamay Dental Wellness for confident smiles.
+      </p>
+
+      <button>
+        Book Appointment
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-grid">
+
+    <div>
+
+      <div class="logo" style="margin-bottom:20px;">
+
+        <div class="logo-box">
+          <i class="fa-solid fa-tooth"></i>
+        </div>
+
+        <h3>
+          Anamay
+          <span>Dental Wellness</span>
+        </h3>
+
+      </div>
+
+      <p>
+        Premium dental wellness clinic delivering
+        advanced treatments with a compassionate touch.
+      </p>
+
+    </div>
+
+    <div>
+
+      <h4>Services</h4>
+
+      <a href="#">Root Canal</a><br>
+      <a href="#">Implants</a><br>
+      <a href="#">Smile Design</a>
+
+    </div>
+
+    <div>
+
+      <h4>Clinic</h4>
+
+      <a href="#">Doctor</a><br>
+      <a href="#">Gallery</a><br>
+      <a href="#">Contact</a>
+
+    </div>
+
+    <div>
+
+      <h4>Reach Us</h4>
+
+      <p>Amravati, Maharashtra</p>
+
+      <p>+91 93563 69815</p>
+
+    </div>
+
+  </div>
+
+  <div class="footer-big">
+    ANAMAY
+  </div>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a
+  href="https://wa.me/919356369815"
+  target="_blank"
+  class="whatsapp"
+>
+
+  <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<!-- MOBILE MENU JS -->
+
+<script>
+
+const menuToggle =
+document.getElementById('menu-toggle');
+
+const mobileMenu =
+document.getElementById('mobile-menu');
+
+menuToggle.addEventListener('click',()=>{
+
+  mobileMenu.classList.toggle('active');
+
+  if(mobileMenu.classList.contains('active')){
+
+    menuToggle.innerHTML =
+    '<i class="fa-solid fa-xmark"></i>';
+
+  }
+
+  else{
+
+    menuToggle.innerHTML =
+    '<i class="fa-solid fa-bars"></i>';
+
+  }
+
+});
+
+</script>
+
+</body>
+</html> 
