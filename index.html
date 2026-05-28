@@ -553,107 +553,209 @@ href="https://anamaydental.in/"
     /* ====================================================
        RESPONSIVE
     ==================================================== */
+@media(max-width:768px){
 
-    @media(max-width:768px){
+html,
+body{
+overflow-x:hidden;
+width:100%;
+}
 
-      body,
-      html{
-        overflow-x:hidden;
-      }
+.container{
+width:92%;
+padding:0;
+}
 
-      .container{
-        width:92%;
-      }
+/* =========================
+HEADER
+========================= */
 
-      section{
-        padding:80px 0;
-      }
+header{
+top:12px;
+padding:0 10px;
+}
 
-      header{
-        top:14px;
-      }
+.navbar{
+padding:12px 14px;
+border-radius:22px;
+}
 
-      .navbar{
-        padding:14px 16px;
-        border-radius:24px;
-      }
+.nav-links,
+.nav-btn{
+display:none;
+}
 
-      .nav-links{
-        display:none;
-      }
+.menu-toggle{
+display:flex;
+width:44px;
+height:44px;
+font-size:17px;
+border-radius:14px;
+flex-shrink:0;
+}
 
-      .nav-btn{
-        display:none;
-      }
+.logo{
+max-width:75%;
+gap:8px;
+}
 
-      .menu-toggle{
-        display:flex;
-      }
+.logo-box{
+width:38px;
+height:38px;
+min-width:38px;
+border-radius:12px;
+}
 
-      .hero{
-        min-height:auto;
-        padding-top:130px;
-        padding-bottom:60px;
-      }
+.logo h3{
+font-size:13px;
+line-height:1.1;
+}
 
-      .hero-grid{
-        grid-template-columns:1fr;
-        gap:60px;
-      }
+.logo h3 span{
+font-size:9px;
+letter-spacing:.5px;
+}
 
-      .hero h1{
-        font-size:50px;
-        line-height:1.08;
-      }
+/* =========================
+MOBILE MENU
+========================= */
 
-      .hero p{
-        font-size:14px;
-      }
+.mobile-menu{
+width:calc(100% - 20px);
+max-width:420px;
+top:82px;
+padding:24px;
+border-radius:24px;
+}
 
-      .hero-btns{
-        flex-direction:column;
-      }
+/* =========================
+HERO
+========================= */
 
-      .btn{
-        width:100%;
-      }
+.hero{
+padding-top:120px;
+padding-bottom:70px;
+min-height:auto;
+}
 
-      .hero-bottom{
-        flex-direction:column;
-        gap:10px;
-      }
+.hero-grid{
+grid-template-columns:1fr;
+gap:50px;
+}
 
-      .hero-image img{
-        border-radius:26px;
-      }
+/* =========================
+TEXT
+========================= */
 
-      .floating{
-        padding:16px;
-        border-radius:18px;
-        max-width:180px;
-      }
+.hero-tag{
+font-size:10px;
+padding:7px 12px;
+margin-bottom:20px;
+}
 
-      .floating.top{
-        left:10px;
-        top:-20px;
-      }
+.hero h1{
+font-size:54px;
+line-height:0.98;
+letter-spacing:-2px;
+word-break:break-word;
+margin-bottom:22px;
+}
 
-      .floating.bottom{
-        right:10px;
-        bottom:-20px;
-      }
+.hero p{
+font-size:14px;
+line-height:1.9;
+margin-bottom:28px;
+}
 
-      .floating h4{
-        font-size:30px;
-      }
+/* =========================
+BUTTONS
+========================= */
 
-      .whatsapp{
-        width:58px;
-        height:58px;
-        font-size:24px;
-      }
+.hero-btns{
+flex-direction:column;
+gap:14px;
+margin-bottom:24px;
+}
 
-    }
+.btn{
+width:100%;
+padding:16px;
+font-size:14px;
+}
+
+/* =========================
+BOTTOM INFO
+========================= */
+
+.hero-bottom{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+font-size:13px;
+}
+
+/* =========================
+IMAGE
+========================= */
+
+.hero-image{
+width:100%;
+max-width:100%;
+}
+
+.hero-image img{
+width:100%;
+height:380px;
+object-fit:cover;
+border-radius:24px;
+}
+
+/* =========================
+FLOATING CARDS
+========================= */
+
+.floating{
+padding:14px;
+border-radius:18px;
+max-width:150px;
+}
+
+.floating.top{
+left:8px;
+top:-18px;
+}
+
+.floating.bottom{
+right:8px;
+bottom:-18px;
+}
+
+.floating h4{
+font-size:28px;
+}
+
+.floating h3{
+font-size:18px;
+}
+
+.floating p{
+font-size:11px;
+line-height:1.5;
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp{
+width:56px;
+height:56px;
+font-size:24px;
+right:14px;
+bottom:14px;
+}
+
+}
 
   </style>
 
