@@ -827,17 +827,28 @@ aria-label="Phone Number"
 </div>
 
 <div class="form-grid">
+<input
+type="text"
+id="treatment"
+list="treatment-options"
+placeholder="Select or type treatment"
+autocomplete="off"
+/>
 
-<select id="treatment">
+<datalist id="treatment-options">
 
-<option>Select Treatment</option>
-<option>Root Canal Therapy</option>
-<option>Dental Implants</option>
-<option>Smile Design</option>
-<option>Whitening</option>
-<option>Braces & Aligners</option>
+<option value="Root Canal Therapy">
+<option value="Dental Implants">
+<option value="Smile Design">
+<option value="Teeth Whitening">
+<option value="Braces & Aligners">
+<option value="Cosmetic Dentistry">
+<option value="Kids Dentistry">
+<option value="Dental Cleaning">
+<option value="Tooth Extraction">
+<option value="Full Mouth Rehabilitation">
 
-</select>
+</datalist>
 
 <input
 type="date"
