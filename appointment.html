@@ -439,13 +439,37 @@ select,
 textarea{
 width:100%;
 padding:18px;
-border:none;
 border-radius:18px;
-background:white;
+background:#ffffff;
+border:1px solid #dbeafe;
 outline:none;
 font-family:'Poppins',sans-serif;
-font-size:13px;
+font-size:14px;
+font-weight:500;
+color:#0f172a;
 margin-bottom:16px;
+box-shadow:0 4px 12px rgba(15,23,42,.04);
+transition:.3s;
+}
+
+/* PLACEHOLDER */
+
+input::placeholder,
+textarea::placeholder{
+color:#94a3b8;
+font-weight:500;
+}
+
+/* FOCUS EFFECT */
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#38bdf8;
+box-shadow:
+0 0 0 4px rgba(14,165,233,.08),
+0 10px 25px rgba(14,165,233,.08);
+background:#fff;
 }
 
 textarea{
