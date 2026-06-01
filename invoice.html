@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anamay Dental Wellness - Invoice Generator</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: linear-gradient(180deg, #eaf4fb 0%, #f9fbff 100%);
+  min-height: 100vh;
+  padding: 24px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.card {
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  padding: 28px;
+}
+h2 {
+  color: #0f172a;
+  margin-bottom: 20px;
+  font-size: 1.65rem;
+}
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #475569;
+  font-weight: 600;
+}
+input,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dbe3ea;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  background: #f8fbff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.12);
+}
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.18);
+}
+.generate {
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #fff;
+}
+.whatsapp {
+  background: #22c55e;
+  color: #fff;
+}
+.print {
+  background: #111827;
+  color: #fff;
+}
+.preview-header {
+  text-align: center;
+  border-bottom: 2px solid #0ea5e9;
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+}
+.logo {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.logo img,
+.logo-image,
+.logo-sm img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.preview-notice {
+  color: #64748b;
+  text-align: center;
+}
+.invoice-card {
+  background: #f8fbff;
+  border: 1px solid #dfe7ef;
+  border-radius: 22px;
+  padding: 24px;
+}
+.invoice-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.invoice-brand {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.invoice-brand .logo-sm {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  font-size: 22px;
+}
+.invoice-brand h3,
+.invoice-brand p,
+.invoice-meta p {
+  margin-bottom: 6px;
+}
+.invoice-meta {
+  text-align: right;
+  min-width: 190px;
+}
+.invoice-meta .status {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0c4a6e;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+.invoice-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.invoice-section div {
+  background: #fff;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+}
+.invoice-section b {
+  display: block;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+.invoice-table th,
+.invoice-table td {
+  padding: 14px 16px;
+  border: 1px solid #dbe3ea;
+}
+.invoice-table th {
+  background: #eff6ff;
+  text-align: left;
+  color: #0f172a;
+}
+.invoice-table td {
+  color: #334155;
+}
+.invoice-total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.invoice-note {
+  margin-top: 18px;
+  color: #475569;
+  line-height: 1.7;
+}
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .invoice-top,
+  .invoice-section {
+    grid-template-columns: 1fr;
+  }
+  .invoice-meta {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+  .card {
+    padding: 20px;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .invoice-top {
+    gap: 14px;
+  }
+  .invoice-brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .invoice-brand .logo-sm {
+    width: 48px;
+    height: 48px;
+  }
+  .invoice-meta {
+    min-width: auto;
+    text-align: left;
+  }
+  .invoice-section {
+    gap: 14px;
+  }
+  .invoice-table th,
+  .invoice-table td {
+    padding: 12px 10px;
+  }
+  .invoice-total {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+    <h2><i class="fa-solid fa-file-invoice"></i> Generate Invoice</h2>
+
+    <label for="patientName">Patient Name</label>
+    <input id="patientName" placeholder="Enter patient name">
+
+    <label for="mobile">WhatsApp Number</label>
+    <input id="mobile" placeholder="Enter mobile number" maxlength="10" inputmode="numeric">
+
+    <label for="treatment">Treatment</label>
+    <input id="treatment" placeholder="Enter treatment description">
+
+    <label for="amount">Amount (₹)</label>
+    <input id="amount" type="number" min="0" placeholder="Enter total amount">
+
+    <label for="paymentMode">Payment Mode</label>
+    <select id="paymentMode">
+      <option>Cash</option>
+      <option>UPI</option>
+      <option>Card</option>
+    </select>
+
+    <button class="btn generate" onclick="generateInvoice()">Generate PDF Invoice</button>
+    <button class="btn whatsapp" onclick="sendWhatsapp()">Open WhatsApp</button>
+     <button class="btn print" onclick="window.print()">Print Invoice</button>
+  </div>
+
+  <div class="card">
+    <div class="preview-header">
+      <div class="logo"><img src="images/logo.png" alt="Anamay Dental Wellness logo"></div>
+      <h2>Anamay Dental Wellness</h2>
+      <p>Dr. Shravani</p>
+      <p>Amravati, Maharashtra</p>
+      <p>+91 9356369815</p>
+    </div>
+
+    <div id="preview" class="invoice-card">
+      <p class="preview-notice">Fill the form on the left and click <strong>Generate PDF Invoice</strong> to view the invoice preview here.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentInvoice = 'INV001';
+let generatedPdfUrl = '';
+
+function formatAmount(value) {
+  const number = Number(value) || 0;
+  return number.toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+}
+
+async function generateInvoice() {
+  const patient = document.getElementById('patientName').value.trim();
+  const mobile = document.getElementById('mobile').value.trim();
+  const treatment = document.getElementById('treatment').value.trim();
+  const amount = document.getElementById('amount').value.trim();
+  const payment = document.getElementById('paymentMode').value;
+
+  if (!patient || !mobile || !treatment || !amount) {
+    alert('Please enter all invoice details before generating.');
+    return;
+  }
+
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    alert('Please enter a valid 10-digit WhatsApp number.');
+    return;
+  }
+
+  if (generatedPdfUrl) {
+    URL.revokeObjectURL(generatedPdfUrl);
+    generatedPdfUrl = '';
+  }
+
+  currentInvoice = 'INV' + Date.now().toString().slice(-6);
+  const date = new Date();
+  const invoiceDate = date.toLocaleDateString('en-IN');
+  const dueDate = new Date(date.getTime() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString('en-IN');
+  const totalAmount = formatAmount(amount);
+
+  document.getElementById('preview').innerHTML = `
+    <div class="invoice-top">
+      <div class="invoice-brand">
+        <div class="logo-sm"><img src="images/logo.png" alt="Logo"></div>
+        <div>
+          <h3>Anamay Dental Wellness</h3>
+          <p>Dr. Shravani</p>
+          <p>Amravati, Maharashtra</p>
+          <p>+91 9356369815</p>
+        </div>
+      </div>
+      <div class="invoice-meta">
+        <div class="status">FINAL INVOICE</div>
+        <p><strong>Invoice #</strong> ${currentInvoice}</p>
+        <p><strong>Date</strong> ${invoiceDate}</p>
+        <p><strong>Due Date</strong> ${dueDate}</p>
+      </div>
+    </div>
+
+    <div class="invoice-section">
+      <div>
+        <b>Bill To</b>
+        <p>${patient}</p>
+        <p>WhatsApp: +91 ${mobile}</p>
+      </div>
+      <div>
+        <b>Payment Details</b>
+        <p><strong>Payment Mode:</strong> ${payment}</p>
+        <p><strong>Treatment:</strong> ${treatment}</p>
+      </div>
+    </div>
+
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th style="width: 120px; text-align: right;">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>${treatment}</td>
+          <td style="text-align: right;">${totalAmount}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="invoice-total">
+      <span>Total:</span>
+      <span>${totalAmount}</span>
+    </div>
+
+    <p class="invoice-note">Thank you for choosing Anamay Dental Wellness. Please contact us if you have any questions about this invoice.</p>
+  `;
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+  const leftMargin = 40;
+  let y = 70;
+
+  const logoData = await loadLogoData('images/logo.png');
+  if (logoData) {
+    doc.addImage(logoData, 'PNG', leftMargin, 40, 60, 60);
+  }
+
+  doc.setFontSize(20);
+  doc.setTextColor('#0f172a');
+  doc.text('ANAMAY DENTAL WELLNESS', leftMargin + 80, y);
+
+  y += 30;
+  doc.setFontSize(11);
+  doc.setTextColor('#334155');
+  doc.text('Dr. Shravani', leftMargin + 80, y);
+  doc.text('Amravati, Maharashtra', leftMargin + 80, y + 16);
+  doc.text('+91 9356369815', leftMargin + 80, y + 32);
+
+  y += 60;
+  doc.setDrawColor('#0ea5e9');
+  doc.setLineWidth(1.5);
+  doc.line(leftMargin, y, 570, y);
+
+  y += 30;
+  doc.setFontSize(12);
+  doc.setTextColor('#0f172a');
+  doc.text(`Invoice #: ${currentInvoice}`, leftMargin, y);
+  doc.text(`Date: ${invoiceDate}`, leftMargin, y + 18);
+  doc.text(`Due Date: ${dueDate}`, leftMargin, y + 36);
+
+  doc.text(`Patient: ${patient}`, 350, y);
+  doc.text(`WhatsApp: +91 ${mobile}`, 350, y + 18);
+  doc.text(`Payment Mode: ${payment}`, 350, y + 36);
+
+  y += 80;
+  doc.setFillColor('#eff6ff');
+  doc.rect(leftMargin, y, 520, 28, 'F');
+  doc.setFontSize(11);
+  doc.setTextColor('#0f172a');
+  doc.text('Description', leftMargin + 10, y + 18);
+  doc.text('Amount', 520, y + 18, { align: 'right' });
+
+  y += 36;
+  doc.setTextColor('#334155');
+  doc.text(treatment, leftMargin + 10, y);
+  doc.text(totalAmount, 520, y, { align: 'right' });
+
+  y += 40;
+  doc.setLineWidth(0.5);
+  doc.line(leftMargin, y, 570, y);
+  y += 24;
+  doc.setFontSize(13);
+  doc.setFont(undefined, 'bold');
+  doc.text('Total', 430, y);
+  doc.text(totalAmount, 520, y, { align: 'right' });
+
+  y += 40;
+  doc.setFontSize(10);
+  doc.setFont(undefined, 'normal');
+  doc.setTextColor('#64748b');
+  doc.text('Thank you for choosing Anamay Dental Wellness. We appreciate your trust in our dental care.', leftMargin, y, { maxWidth: 520 });
+
+  const pdfBlob = doc.output('blob');
+  const pdfUrl = URL.createObjectURL(pdfBlob);
+  generatedPdfUrl = pdfUrl;
+  window.open(pdfUrl, '_blank');
+}
+
+function downloadInvoice() {
+  if (!generatedPdfUrl) {
+    alert('Please generate the invoice first.');
+    return;
+  }
+
+  const link = document.createElement('a');
+  link.href = generatedPdfUrl;
+  link.download = `${currentInvoice}.pdf`;
+  link.click();
+}
+
+async function loadLogoData(path) {
+  try {
+    const response = await fetch(path);
+    const blob = await response.blob();
+    return await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  } catch (error) {
+    console.warn('Logo load failed:', error);
+    return null;
+  }
+}
+
+function sendWhatsapp() {
+  const mobile = document.getElementById('mobile').value.trim();
+  const patient = document.getElementById('patientName').value.trim();
+  const treatment = document.getElementById('treatment').value.trim();
+  const amount = document.getElementById('amount').value.trim();
+
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    alert('Please enter a valid 10-digit WhatsApp number.');
+    return;
+  }
+
+  if (!generatedPdfUrl) {
+    alert('Please generate the invoice first so you can download it and attach it in WhatsApp.');
+    return;
+  }
+
+  const msg = `🦷 Anamay Dental Wellness\n\nInvoice No: ${currentInvoice}\nPatient: ${patient}\nTreatment: ${treatment}\nAmount: ₹${amount}\n\nInvoice generated. Please download the PDF and attach it in WhatsApp.\n\nThank You.`;
+
+  window.open(`https://wa.me/91${mobile}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+</script>
+
+</body>
+</html>
