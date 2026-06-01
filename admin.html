@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login | Anamay Dental Wellness</title>
+
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:#f5fbfc;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+overflow:hidden;
+}
+
+.blur1,
+.blur2{
+position:absolute;
+border-radius:50%;
+filter:blur(140px);
+z-index:0;
+}
+
+.blur1{
+width:400px;
+height:400px;
+background:#d6f7ff;
+left:-100px;
+top:-100px;
+}
+
+.blur2{
+width:400px;
+height:400px;
+background:#dff8ff;
+right:-100px;
+bottom:-100px;
+}
+
+.login-card{
+position:relative;
+z-index:2;
+width:100%;
+max-width:420px;
+background:rgba(255,255,255,.75);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.4);
+border-radius:30px;
+padding:35px;
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.logo{
+text-align:center;
+margin-bottom:25px;
+}
+
+.logo-circle{
+width:70px;
+height:70px;
+margin:auto;
+border-radius:20px;
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:white;
+margin-bottom:15px;
+}
+
+.logo h2{
+font-size:24px;
+font-weight:700;
+color:#0f172a;
+}
+
+.logo p{
+font-size:13px;
+color:#64748b;
+margin-top:5px;
+}
+
+.form-group{
+margin-bottom:18px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-size:14px;
+font-weight:500;
+color:#334155;
+}
+
+.input-box{
+position:relative;
+}
+
+.input-box i{
+position:absolute;
+left:15px;
+top:50%;
+transform:translateY(-50%);
+color:#64748b;
+}
+
+input{
+width:100%;
+padding:14px 14px 14px 45px;
+border:1px solid #e2e8f0;
+border-radius:14px;
+outline:none;
+font-size:14px;
+}
+
+input:focus{
+border-color:#0ea5e9;
+}
+
+.login-btn{
+width:100%;
+border:none;
+padding:15px;
+border-radius:16px;
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
+color:white;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+margin-top:10px;
+box-shadow:0 15px 30px rgba(37,99,235,.2);
+}
+
+.login-btn:hover{
+opacity:.95;
+}
+
+.back-home{
+display:block;
+text-align:center;
+margin-top:20px;
+color:#64748b;
+font-size:14px;
+text-decoration:none;
+}
+
+.error{
+display:none;
+background:#fee2e2;
+color:#b91c1c;
+padding:12px;
+border-radius:12px;
+font-size:13px;
+margin-bottom:15px;
+}
+
+@media(max-width:768px){
+
+.login-card{
+padding:28px;
+border-radius:24px;
+}
+
+.logo-circle{
+width:60px;
+height:60px;
+font-size:25px;
+}
+
+.logo h2{
+font-size:20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<div class="login-card">
+
+<div class="logo">
+
+<div class="logo-circle">
+<i class="fa-solid fa-user-shield"></i>
+</div>
+
+<h2>Admin Panel</h2>
+
+<p>Anamay Dental Wellness</p>
+
+</div>
+
+<div class="error" id="errorBox">
+Invalid Username or Password
+</div>
+
+<div class="form-group">
+
+<label>Username</label>
+
+<div class="input-box">
+<i class="fa-solid fa-user"></i>
+<input type="text" id="username" placeholder="Enter username">
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Password</label>
+
+<div class="input-box">
+<i class="fa-solid fa-lock"></i>
+<input type="password" id="password" placeholder="Enter password">
+</div>
+
+</div>
+
+<button class="login-btn" onclick="login()">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+ Login
+
+</button>
+
+<a href="index.html" class="back-home">
+
+← Back To Website
+
+</a>
+
+</div>
+
+<script>
+
+function login(){
+
+let username =
+document.getElementById("username").value;
+
+let password =
+document.getElementById("password").value;
+
+if(
+username === "admin" &&
+password === "admin123"
+){
+
+window.location.href="invoice.html";
+
+}
+else{
+
+document.getElementById("errorBox").style.display="block";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
