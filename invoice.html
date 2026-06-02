@@ -472,10 +472,29 @@ async function generateInvoice() {
   const leftMargin = 40;
   let y = 70;
 
-  const logoData = await loadLogoData('images/logo.png');
-  if (logoData) {
-    doc.addImage(logoData, 'PNG', leftMargin, 40, 60, 60);
-  }
+try {
+
+const logoData =
+await loadLogoData('images/logo.png');
+
+if(logoData){
+
+doc.addImage(
+logoData,
+'JPEG',
+leftMargin,
+40,
+60,
+60
+);
+
+}
+
+}catch(err){
+
+console.log("Logo skipped");
+
+}
 
   doc.setFontSize(20);
   doc.setTextColor('#0f172a');
