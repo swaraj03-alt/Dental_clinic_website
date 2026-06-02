@@ -17,6 +17,63 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+
+/* =========================
+   TOP BAR / LOGOUT
+========================= */
+
+.top-bar{
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:9999;
+}
+
+.logout-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#dc2626;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:14px;
+    font-weight:600;
+    box-shadow:0 10px 25px rgba(220,38,38,.25);
+    transition:.3s;
+}
+
+.logout-btn:hover{
+    background:#b91c1c;
+    transform:translateY(-2px);
+}
+
+@media(max-width:768px){
+
+    .top-bar{
+        top:10px;
+        right:10px;
+    }
+
+    .logout-btn{
+        padding:10px 14px;
+        font-size:14px;
+        border-radius:12px;
+    }
+
+    .logout-btn span{
+        display:none;
+    }
+
+    .logout-btn i{
+        margin:0;
+        font-size:16px;
+    }
+}
+
+
+
 body {
   background: linear-gradient(180deg, #eaf4fb 0%, #f9fbff 100%);
   min-height: 100vh;
@@ -267,6 +324,12 @@ select:focus {
 }
 </style>
 </head>
+<div class="top-bar">
+    <a href="index.html" class="logout-btn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </a>
+</div>
 <body>
 
 <div class="container">
