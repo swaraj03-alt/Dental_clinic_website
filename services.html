@@ -1,0 +1,1184 @@
+<!-- =========================================================
+SERVICES.HTML - PREMIUM ANAMAY STYLE CLONE
+FULL RESPONSIVE + MOBILE MENU + ANIMATIONS
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+<!-- =====================================================
+SEO META TAGS
+===================================================== -->
+
+<title>
+Best Dental Services in Amravati | Anamay Dental Wellness
+</title>
+
+<meta
+name="description"
+content="Explore advanced dental services in Amravati including root canal treatment, smile design, dental implants, braces, aligners, teeth whitening and cosmetic dentistry at Anamay Dental Wellness."
+>
+
+<meta
+name="keywords"
+content="Dental Services Amravati, Root Canal Treatment, Dental Implants, Smile Design, Teeth Whitening, Cosmetic Dentistry, Braces, Aligners, Best Dentist in Amravati"
+>
+
+<meta
+name="author"
+content="Anamay Dental Wellness"
+>
+
+<meta
+name="robots"
+content="index, follow"
+>
+
+<meta
+property="og:title"
+content="Dental Services | Anamay Dental Wellness"
+>
+
+<meta
+property="og:description"
+content="Premium painless dental treatments in Amravati."
+>
+
+<meta
+property="og:type"
+content="website"
+>
+
+<meta
+property="og:image"
+content="images/services.webp"
+>
+
+<meta
+property="og:url"
+content="https://anamaydental.in/services.html"
+>
+
+<link
+rel="canonical"
+href="https://anamaydental.in/services.html"
+>
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- FONT AWESOME -->
+<link
+rel="icon"
+href="images/favicon.png"
+>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f5fbfc;
+      overflow-x:hidden;
+      color:#0f172a;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+img{
+width:100%;
+display:block;
+height:auto;
+object-fit:cover;
+}
+
+    .container{
+      width:90%;
+      max-width:1180px;
+      margin:auto;
+      position:relative;
+      z-index:2;
+    }
+
+    section{
+      padding:120px 0;
+      position:relative;
+    }
+
+    /* ====================================================
+       BACKGROUND BLUR
+    ==================================================== */
+
+    .blur1,
+    .blur2{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(140px);
+      z-index:0;
+    }
+
+    .blur1{
+      width:500px;
+      height:500px;
+      background:#d6f7ff;
+      left:-200px;
+      top:0;
+      opacity:.7;
+    }
+
+    .blur2{
+      width:500px;
+      height:500px;
+      background:#dff8ff;
+      right:-200px;
+      bottom:0;
+      opacity:.7;
+    }
+
+    /* ====================================================
+       HEADER
+    ==================================================== */
+
+    header{
+      position:fixed;
+      top:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:100%;
+      z-index:9999;
+      padding:0 15px;
+    }
+
+    .navbar{
+      width:100%;
+      max-width:1180px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 20px;
+      border-radius:30px;
+      background:rgba(255,255,255,.75);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 10px 30px rgba(0,0,0,.04);
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo-box{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+    }
+
+    .logo h3{
+      font-size:14px;
+      line-height:1.2;
+      font-weight:700;
+    }
+
+    .logo h3 span{
+      display:block;
+      color:#64748b;
+      font-size:11px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+    }
+
+    .nav-links a{
+      font-size:13px;
+      color:#475569;
+      transition:.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active{
+      color:#0ea5e9;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .nav-btn{
+      border:none;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      color:white;
+      padding:14px 24px;
+      border-radius:40px;
+      cursor:pointer;
+      font-size:13px;
+      font-weight:600;
+      box-shadow:0 10px 25px rgba(37,99,235,.2);
+    }
+
+    /* ====================================================
+       MOBILE MENU
+    ==================================================== */
+
+    .menu-toggle{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      background:white;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:18px;
+      color:#0f172a;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .mobile-menu{
+      position:fixed;
+      top:92px;
+      left:50%;
+      transform:translateX(-50%) translateY(-30px);
+      width:92%;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(24px);
+      border-radius:30px;
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      z-index:999;
+      opacity:0;
+      pointer-events:none;
+      transition:.4s;
+      box-shadow:0 30px 60px rgba(0,0,0,.08);
+    }
+
+    .mobile-menu.active{
+      opacity:1;
+      transform:translateX(-50%) translateY(0);
+      pointer-events:auto;
+    }
+
+    .mobile-menu a{
+      font-size:15px;
+      color:#0f172a;
+      font-weight:500;
+    }
+
+    .mobile-btn{
+      width:100%;
+      border:none;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      color:white;
+      padding:15px;
+      border-radius:18px;
+      font-weight:600;
+      cursor:pointer;
+      font-family:'Poppins',sans-serif;
+    }
+
+    /* ====================================================
+       HERO
+    ==================================================== */
+
+    .services-hero{
+      padding-top:180px;
+      overflow:hidden;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:80px;
+    }
+
+    .section-title small{
+      color:#0ea5e9;
+      letter-spacing:2px;
+      font-size:11px;
+      font-weight:600;
+    }
+
+    .section-title h1{
+      margin-top:14px;
+      font-size:72px;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:-3px;
+    }
+
+    .section-title h1 span{
+      color:#0ea5e9;
+    }
+
+    .section-title p{
+      margin-top:24px;
+      color:#64748b;
+      font-size:15px;
+      line-height:1.9;
+      max-width:720px;
+      margin-inline:auto;
+    }
+
+    /* ====================================================
+       SERVICES GRID
+    ==================================================== */
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:22px;
+    }
+
+    .service-card{
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(20px);
+      border-radius:28px;
+      padding:30px;
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 10px 35px rgba(0,0,0,.03);
+      transition:.4s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 45px rgba(0,0,0,.06);
+    }
+
+    .service-icon{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:18px;
+      margin-bottom:22px;
+    }
+
+    .service-card h3{
+      font-size:18px;
+      margin-bottom:14px;
+    }
+
+    .service-card p{
+      color:#64748b;
+      line-height:1.9;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    .service-card a{
+      color:#0ea5e9;
+      font-size:12px;
+      font-weight:600;
+    }
+
+    /* ====================================================
+       FEATURES
+    ==================================================== */
+
+    .feature-strip{
+      margin-top:100px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .feature-box{
+      background:white;
+      border-radius:26px;
+      padding:32px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.03);
+    }
+
+    .feature-box i{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:auto;
+      margin-bottom:20px;
+    }
+
+    .feature-box h4{
+      margin-bottom:10px;
+      font-size:16px;
+    }
+
+    .feature-box p{
+      color:#64748b;
+      font-size:13px;
+      line-height:1.8;
+    }
+
+    /* ====================================================
+       CTA
+    ==================================================== */
+
+    .cta{
+      margin-top:120px;
+      background:linear-gradient(135deg,#0ea5e9,#2563eb);
+      border-radius:40px;
+      padding:80px;
+      text-align:center;
+      color:white;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .cta::before{
+      content:'';
+      position:absolute;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      background:rgba(255,255,255,.08);
+      top:-250px;
+      right:-200px;
+    }
+
+    .cta h2{
+      font-size:56px;
+      line-height:1.1;
+      margin-bottom:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto;
+      margin-bottom:35px;
+      line-height:1.9;
+      font-size:14px;
+      position:relative;
+      z-index:2;
+    }
+
+    .cta button{
+      border:none;
+      background:white;
+      color:#0ea5e9;
+      padding:16px 30px;
+      border-radius:40px;
+      font-weight:600;
+      cursor:pointer;
+      font-family:'Poppins',sans-serif;
+      position:relative;
+      z-index:2;
+    }
+
+    /* ====================================================
+       FOOTER
+    ==================================================== */
+
+    footer{
+      margin-top:120px;
+      background:#020817;
+      padding:120px 0 50px;
+      position:relative;
+      overflow:hidden;
+      color:white;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:40px;
+      position:relative;
+      z-index:2;
+    }
+
+    .footer-grid h4{
+      margin-bottom:20px;
+      font-size:14px;
+    }
+
+    .footer-grid p,
+    .footer-grid a{
+      color:#94a3b8;
+      font-size:13px;
+      line-height:2;
+    }
+
+    .footer-big{
+      position:absolute;
+      bottom:-50px;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:240px;
+      font-weight:800;
+      color:rgba(255,255,255,.04);
+      letter-spacing:-10px;
+    }
+
+    /* ====================================================
+       WHATSAPP
+    ==================================================== */
+
+    .whatsapp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:26px;
+      z-index:99999;
+      box-shadow:
+      0 15px 35px rgba(34,197,94,.35),
+      0 0 30px rgba(34,197,94,.2);
+    }
+
+    /* ====================================================
+       RESPONSIVE
+    ==================================================== */
+
+    @media(max-width:1100px){
+
+      .services-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .feature-strip{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      html,
+      body{
+        overflow-x:hidden;
+      }
+
+      .container{
+        width:92%;
+      }
+
+      section{
+        padding:80px 0;
+      }
+
+      header{
+        top:14px;
+      }
+
+      .navbar{
+        padding:14px 16px;
+        border-radius:24px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .nav-btn{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:flex;
+      }
+
+      .services-hero{
+        padding-top:130px;
+      }
+
+      .section-title h1{
+        font-size:48px;
+        line-height:1.08;
+      }
+
+      .section-title p{
+        font-size:14px;
+      }
+
+      .services-grid{
+        grid-template-columns:1fr;
+      }
+
+      .feature-strip{
+        grid-template-columns:1fr;
+      }
+
+      .service-card,
+      .feature-box{
+        padding:26px;
+      }
+
+      .cta{
+        padding:50px 26px;
+        border-radius:30px;
+      }
+
+      .cta h2{
+        font-size:38px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-big{
+        font-size:90px;
+      }
+
+      .whatsapp{
+        width:58px;
+        height:58px;
+        font-size:24px;
+      }
+
+    }
+
+  </style>
+
+  <!-- =====================================================
+LOCAL SEO
+===================================================== -->
+
+<script type="application/ld+json">
+
+{
+"@context":"https://schema.org",
+"@type":"Dentist",
+"name":"Anamay Dental Wellness",
+"url":"https://anamaydental.in",
+"telephone":"+91 93563 69815",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"1st Floor, Jadhav Celebrations, Shegaon Naka",
+"addressLocality":"Amravati",
+"addressRegion":"Maharashtra",
+"postalCode":"444603",
+"addressCountry":"IN"
+},
+"openingHours":"Mo-Sa 10:00-20:30",
+"priceRange":"₹₹"
+}
+
+</script>
+
+</head>
+
+<body>
+
+<!-- ====================================================
+     HEADER
+==================================================== -->
+
+<header>
+
+  <div class="navbar">
+
+    <div class="logo">
+
+      <div class="logo-box">
+        <i class="fa-solid fa-tooth"></i>
+      </div>
+
+      <h3>
+        Anamay
+        <span>Dental Wellness</span>
+      </h3>
+
+    </div>
+
+    <div class="nav-links">
+
+      <a href="index.html">Home</a>
+      <a class="active" href="services.html">Services</a>
+      <a href="doctor.html">Doctor</a>
+      <a href="review.html">Reviews</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div class="nav-right">
+
+      <a href="appointment.html">
+
+        <button class="nav-btn">
+          Book Appointment
+        </button>
+
+      </a>
+
+      <div class="menu-toggle" id="menu-toggle">
+
+        <i class="fa-solid fa-bars"></i>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobile-menu">
+
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="doctor.html">Doctor</a>
+  <a href="review.html">Reviews</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+
+  <a href="admin.html">
+    <button class="mobile-btn admin-btn">
+      <i class="fa-solid fa-user-shield"></i>
+      Admin Login
+    </button>
+  </a>
+
+  <a href="https://wa.me/919356369815" target="_blank">
+    <button class="mobile-btn">
+      <i class="fa-brands fa-whatsapp"></i>
+      WhatsApp Consultation
+    </button>
+  </a>
+
+</div>
+
+
+<!-- ====================================================
+     SERVICES SECTION
+==================================================== -->
+
+<section class="services-hero">
+
+  <div class="blur1"></div>
+  <div class="blur2"></div>
+
+  <div class="container">
+
+    <!-- TITLE -->
+
+    <div class="section-title">
+
+      <small>WHAT WE DO</small>
+
+<h1>
+
+Best
+<span>Dental Services</span>
+in Amravati
+
+</h1>
+
+      <p>
+
+Anamay Dental Wellness offers advanced dental treatments in Amravati including root canal treatment, smile design, braces, aligners, dental implants, cosmetic dentistry and painless dental care.
+
+</p>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="services-grid">
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-wave-square"></i>
+        </div>
+
+        <h3>Root Canal Therapy</h3>
+
+        <p>
+          Single-visit painless RCT using advanced rotary endodontics.
+        </p>
+
+        <a href="#">
+          Learn More →
+        </a>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-regular fa-star"></i>
+        </div>
+
+        <h3>Teeth Whitening</h3>
+
+        <p>
+          In-clinic laser whitening for a brighter confident smile.
+        </p>
+
+        <a href="#">
+          Learn More →
+        </a>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-anchor"></i>
+        </div>
+
+        <h3>Dental Implants</h3>
+
+        <p>
+          Premium titanium implants replacing teeth permanently.
+        </p>
+
+        <a href="#">
+          Learn More →
+        </a>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <h3>Braces & Aligners</h3>
+
+        <p>
+          Metal, ceramic and clear aligners tailored for your jaw.
+        </p>
+
+        <a href="#">
+          Learn More →
+        </a>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+
+        <h3>Kids Dentistry</h3>
+
+        <p>
+          Gentle pediatric dental care in a calming environment.
+        </p>
+
+        <a href="#">
+          Learn More →
+        </a>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-gem"></i>
+        </div>
+
+        <h3>Smile Design</h3>
+
+        <p>
+          Digital smile makeover with veneers and contouring.
+        </p>
+
+        <a href="#">
+          Learn More →
+        </a>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-fire-flame-curved"></i>
+        </div>
+
+        <h3>Dental Cleaning</h3>
+
+        <p>
+          Ultrasonic scaling polishing and oral prophylaxis.
+        </p>
+
+        <a href="#">
+          Learn More →
+        </a>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+
+        <h3>Cosmetic Dentistry</h3>
+
+        <p>
+          Veneers laminates and bonding for picture-perfect teeth.
+        </p>
+
+        <a href="#">
+          Learn More →
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- FEATURES -->
+
+    <div class="feature-strip">
+
+      <div class="feature-box">
+
+        <i class="fa-solid fa-shield-heart"></i>
+
+        <h4>Painless Procedures</h4>
+
+        <p>
+          Gentle treatments designed for stress-free visits.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <i class="fa-solid fa-microscope"></i>
+
+        <h4>Advanced Technology</h4>
+
+        <p>
+          Modern equipment ensuring precision and comfort.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <i class="fa-solid fa-certificate"></i>
+
+        <h4>Certified Specialists</h4>
+
+        <p>
+          Experienced professionals with premium care.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <i class="fa-solid fa-heart"></i>
+
+        <h4>Patient First Care</h4>
+
+        <p>
+          Warm environment focused on every patient’s comfort.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+
+    <div class="cta">
+
+      <h2>
+        Ready to transform your smile?
+      </h2>
+
+      <p>
+        Book your consultation today and experience
+        modern premium dental care tailored to your comfort.
+      </p>
+
+<a
+href="appointment.html"
+>
+
+<button>
+Book Appointment
+</button>
+
+</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ====================================================
+     FOOTER
+==================================================== -->
+
+<footer>
+
+  <div class="container footer-grid">
+
+    <div>
+
+      <div class="logo" style="margin-bottom:20px;">
+
+        <div class="logo-box">
+          <i class="fa-solid fa-tooth"></i>
+        </div>
+
+        <h3>
+          Anamay
+          <span>Dental Wellness</span>
+        </h3>
+
+      </div>
+
+      <p>
+        Advanced dental care with a personal touch.
+        Dedicated to premium dental wellness.
+      </p>
+
+    </div>
+
+    <div>
+
+      <h4>Services</h4>
+
+      <a href="#">Root Canal</a><br>
+      <a href="#">Whitening</a><br>
+      <a href="#">Implants</a><br>
+      <a href="#">Smile Design</a>
+
+    </div>
+
+    <div>
+
+      <h4>Clinic</h4>
+
+      <a href="#">Doctor</a><br>
+      <a href="#">Gallery</a><br>
+      <a href="#">Contact</a>
+
+    </div>
+
+    <div>
+
+      <h4>Reach Us</h4>
+
+      <p>Amravati, Maharashtra</p>
+
+      <p>+91 93563 69815</p>
+
+    </div>
+
+  </div>
+
+  <div class="footer-big">
+    ANAMAY
+  </div>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a
+  href="https://wa.me/919356369815"
+  target="_blank"
+  class="whatsapp"
+>
+
+  <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<!-- MOBILE MENU JS -->
+
+<script>
+
+const menuToggle =
+document.getElementById('menu-toggle');
+
+const mobileMenu =
+document.getElementById('mobile-menu');
+
+menuToggle.addEventListener('click',()=>{
+
+  mobileMenu.classList.toggle('active');
+
+  if(mobileMenu.classList.contains('active')){
+
+    menuToggle.innerHTML =
+    '<i class="fa-solid fa-xmark"></i>';
+
+  }
+
+  else{
+
+    menuToggle.innerHTML =
+    '<i class="fa-solid fa-bars"></i>';
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
